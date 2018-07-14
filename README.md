@@ -87,14 +87,14 @@ public String onSubscribe() {
 
 ##### Sample explanation
 Here is some useful `import`
-```
+```js
 import { StompService, StompConfig, StompState } from "@stomp/ng2-stompjs";
 import { Message } from "@stomp/stompjs";
 import { Observable, BehaviorSubject } from "rxjs";
 ```
 
 Create Stomp Configuration
-```
+```js
 let stompConfig: StompConfig = {
   url: socketUrl,
   headers: {
@@ -109,17 +109,17 @@ let stompConfig: StompConfig = {
 ```
 
 Create Stomp Service
-```
+```js
 this.stompService = new StompService(stompConfig);
 ```
 
 Connect to a Stream
-```
+```js
 this.stompService.subscribe(streamUrl);
 ```
 
 Send a message from client (angular) to the server (spring)
-```
+```js
 this.stompService.publish(url, JSON.stringify(message));
 ```
 
