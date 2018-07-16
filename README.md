@@ -81,7 +81,7 @@ public String onSubscribe() {
 #### Step to re-create the angular client :
 ##### Prerequisites
 1. Create a new angular application `ng new angular-websocket`
-2. Install required dependencies `npm install @stomp/ng2-stompjs` and `npm install @rxjs-compat`
+2. Install required dependencies `npm install @stomp/ng2-stompjs` and `npm install rxjs-compat`
 3. Create a service `ng g service services/messaging`
 4. Then develop the application code.
 
