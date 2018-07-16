@@ -8,7 +8,7 @@ But it aim to provide a complete and minimalist project to serve as plug'n'play 
 
 ## Usage
 1. Clone the repository `git clone https://github.com/batiwo/spring-websocket-angular6.git` 
-2. Build the `angular-websocket` project with `npm install` to install dependencies and then `ng build`
+2. Build the `angular-websocket` project with `npm install` to install dependencies and then `ng build -base-href=.`
 3. Build the `spring-websocket` project with `mvn install`
 4. Run the produced JAR `spring-websocket-1.0-SNAPSHOT.jar` with `java -jar spring-websocket-1.0-SNAPSHOT.jar`
 5. Go to [http://localhost:8080/index.html](http://localhost:8080/index.html) and enjoy.

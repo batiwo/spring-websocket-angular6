@@ -31,6 +31,11 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
                 <executions>
                     <execution>
@@ -47,6 +52,34 @@
                             </resources>
                             <outputDirectory>${basedir}/target/classes/static/</outputDirectory>
                         </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <id>copy</id>
+                        <phase>package</phase>
+                        <configuration>
+                            <target>
+                                <echo>ANT TASK - copying files....</echo>
+                                <copy todir="${basedir}/distribution" overwrite="true" flatten="false">
+                                    <fileset dir="${basedir}/angular-websocket/dist">
+                                        <include name="**"/>
+                                    </fileset>
+                                </copy>
+
+                                <copy todir="${basedir}/distribution" overwrite="true" flatten="true">
+                                    <fileset dir="${basedir}/target" includes="*.jar"/>
+                                </copy>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
